@@ -3007,6 +3007,7 @@ GameObject:
   - component: {fileID: 7722177084681285868}
   - component: {fileID: 5792640271238869799}
   - component: {fileID: 8123788250651451700}
+  - component: {fileID: 2347585067309087207}
   m_Layer: 0
   m_Name: Jason
   m_TagString: Untagged
@@ -3078,6 +3079,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.4
+--- !u!65 &2347585067309087207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337974403065384096}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.7015667, y: 2.2413783, z: 0.9693432}
+  m_Center: {x: -0.0076646805, y: 1.0501852, z: 0.15328693}
 --- !u!1 &6359765831052454299
 GameObject:
   m_ObjectHideFlags: 0

@@ -2178,6 +2178,7 @@ GameObject:
   - component: {fileID: 4575845366183297659}
   - component: {fileID: 5074294174342373395}
   - component: {fileID: 675660055535471792}
+  - component: {fileID: 7729749766889059151}
   m_Layer: 0
   m_Name: Clown
   m_TagString: Untagged
@@ -2249,6 +2250,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.4
+--- !u!65 &7729749766889059151
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176284146970506784}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.7950706, y: 2.43484, z: 1.275015}
+  m_Center: {x: 0.011964321, y: 1.11382, z: 0.1375075}
 --- !u!1 &5233460103697416754
 GameObject:
   m_ObjectHideFlags: 0

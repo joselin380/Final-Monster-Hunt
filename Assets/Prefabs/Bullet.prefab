@@ -98,6 +98,8 @@ GameObject:
   - component: {fileID: 8787795309926185365}
   - component: {fileID: 372625263473920993}
   - component: {fileID: 125582866089358558}
+  - component: {fileID: 3277576727651082955}
+  - component: {fileID: 652176868144815386}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -114,7 +116,7 @@ Transform:
   m_GameObject: {fileID: 5599014398880175651}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -4.53, y: 0.79, z: 1.37}
+  m_LocalPosition: {x: -4.53, y: 0.79, z: 1.475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -168,6 +170,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f16aa39f92a34ba3cbfe6d509b331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3277576727651082955
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5599014398880175651}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.32768494, y: 0.6732429, z: 0.33757305}
+  m_Center: {x: -0.0015469491, y: 0.29316753, z: -0.0040254593}
+--- !u!54 &652176868144815386
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5599014398880175651}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7433182649961437055
 GameObject:
   m_ObjectHideFlags: 0
