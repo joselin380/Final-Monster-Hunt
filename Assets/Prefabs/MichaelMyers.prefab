@@ -2422,10 +2422,11 @@ GameObject:
   - component: {fileID: 2074665505844968252}
   - component: {fileID: 4477350612564949119}
   - component: {fileID: 3439556465341901199}
-  - component: {fileID: 3150934748258263551}
+  - component: {fileID: 2752731588893246927}
+  - component: {fileID: 1041145380695332174}
   m_Layer: 0
   m_Name: MichaelMyers
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2515,7 +2516,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.744248, y: 2.2871444, z: 0.92429924}
   m_Center: {x: -0.0076038837, y: 1.0373, z: 0.09843445}
---- !u!114 &3150934748258263551
+--- !u!54 &2752731588893246927
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166956804861866626}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1041145380695332174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2524,9 +2552,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5166956804861866626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99fbb1e8ea655b24e82345e6bb63f1c2, type: 3}
+  m_Script: {fileID: 11500000, guid: a4c1b07adba3e6b469332d27df79dc8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &5195956123572575383
 GameObject:
   m_ObjectHideFlags: 0

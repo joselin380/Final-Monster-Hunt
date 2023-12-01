@@ -2255,10 +2255,11 @@ GameObject:
   - component: {fileID: 7814791471232495178}
   - component: {fileID: 1393849579241502232}
   - component: {fileID: -1056222871203630426}
-  - component: {fileID: 3879519989511343455}
+  - component: {fileID: -2286392252408696783}
+  - component: {fileID: 5624816165078769466}
   m_Layer: 0
   m_Name: ChainsawDude
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2348,7 +2349,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.7682993, y: 2.5153532, z: 1.094471}
   m_Center: {x: 0.006716609, y: 1.1536374, z: 0.0067424774}
---- !u!114 &3879519989511343455
+--- !u!54 &-2286392252408696783
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242393917391182047}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5624816165078769466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2357,9 +2385,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5242393917391182047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99fbb1e8ea655b24e82345e6bb63f1c2, type: 3}
+  m_Script: {fileID: 11500000, guid: a4c1b07adba3e6b469332d27df79dc8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &5245101319943388215
 GameObject:
   m_ObjectHideFlags: 0

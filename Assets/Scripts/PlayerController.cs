@@ -1,31 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    private GameManager gameManager;
+    private Camera mainCamera;
     public float horizontalInput;
     public float verticalInput;
     public float speed = 10.0f;
     private float xRange = 30;
     private float zRange = 8;
-    private Camera mainCamera;
 
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = FindObjectOfType<Camera>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Move the player
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-        verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
+        if (gameManager.isGameActive)
+        {
+            // Move the player
+            horizontalInput = Input.GetAxis("Horizontal");
+            transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+            verticalInput = Input.GetAxis("Vertical");
+            transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
+
+            // Launch bullets
+            if (Input.GetMouseButtonDown(0))
+            {
+                Instantiate(projectilePrefab, transform.position, transform.rotation);
+            }
+
+            // Face Mouse
+            Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+            Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+            float rayLength;
+            if (groundPlane.Raycast(cameraRay, out rayLength))
+            {
+                Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+                Debug.DrawLine(cameraRay.origin, pointToLook, Color.yellow); // helps in scene view to see where he is looking
+                transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
+            }
+        }
 
         // Keep player in bounds
         if (transform.position.x < -xRange)
@@ -44,22 +67,14 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
         }
 
-        // Launch bullets
-        if (Input.GetMouseButtonDown(0))
-        {
-            Instantiate(projectilePrefab, transform.position, transform.rotation);
-        }
 
-        // Face Mouse
-        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-        float rayLength;
-        if (groundPlane.Raycast(cameraRay, out rayLength))
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
-            Debug.DrawLine(cameraRay.origin, pointToLook, Color.yellow); // helps in scene view to see where he is looking
-            transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
+            gameManager.GameOver();
         }
-        
     }
 }
