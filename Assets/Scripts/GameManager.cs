@@ -10,22 +10,35 @@ public class GameManager : MonoBehaviour
 {
     public List<GameObject> enemies;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI scoreText;
     public Button restartButton;
+    public Button playButton;
+    public GameObject titleScreen;
     public bool isGameActive;
-    private float spawnInterval = 1.5f;
+    private float spawnInterval = 1.0f;
+    private int score;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        isGameActive = true;
-        StartCoroutine(SpawnRandomEnemies());
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void StartGame()
+    {
+        isGameActive = true;
+        score = 0;
+        UpdateScore(0);
+        StartCoroutine(SpawnRandomEnemies());
+        titleScreen.gameObject.SetActive(false);
+        playButton.gameObject.SetActive(false);
     }
 
     // Spawn random enemies
@@ -51,5 +64,16 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void PlayGame()
+    {
+        StartGame();
+    }
+
+    public void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = "Score: " + score;
     }
 }

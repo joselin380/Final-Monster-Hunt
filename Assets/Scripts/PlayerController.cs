@@ -6,8 +6,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public AudioClip gunShotSound;
     private GameManager gameManager;
     private Camera mainCamera;
+    private AudioSource playerAudio;
     public float horizontalInput;
     public float verticalInput;
     public float speed = 10.0f;
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         mainCamera = FindObjectOfType<Camera>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +39,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 Instantiate(projectilePrefab, transform.position, transform.rotation);
+                playerAudio.PlayOneShot(gunShotSound, 1.0f);
             }
 
             // Face Mouse
